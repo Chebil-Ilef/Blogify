@@ -4,16 +4,16 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    return notFound()
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+      cache: "no-store",
+    });
+  
+    if (!res.ok) {
+      throw notFound();
+    }
+  
+    return res.json();
   }
-
-  return res.json();
-}
 
 
 export async function generateMetadata({ params }) {
