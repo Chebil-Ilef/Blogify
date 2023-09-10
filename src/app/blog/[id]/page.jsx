@@ -4,21 +4,22 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-      cache: "no-store",
-    });
-  
-    if (!res.ok) {
-      throw notFound();
-    }
-  
-    return res.json();
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    return notFound()
   }
+
+  return res.json();
+}
 
 
 export async function generateMetadata({ params }) {
 
   const post = await getData(params.id)
+  console.log(post)
   return {
     title: post.title,
     description: post.desc,
@@ -38,7 +39,7 @@ const BlogPost = async ({ params }) => {
           <div className={styles.author}>
             <Image
               src={data.img}
-              alt=""
+              alt="img"
               width={40}
               height={40}
               className={styles.avatar}
