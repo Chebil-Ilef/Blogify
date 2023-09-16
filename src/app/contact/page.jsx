@@ -4,7 +4,7 @@ import Image from "next/image";
 import Button from "@/components/Button/Button";
 
 export const metadata = {
-  title: "LostElf Contact Information",
+  title: "Blogify Contact Information",
   description: "This is Contact Page",
 };
 

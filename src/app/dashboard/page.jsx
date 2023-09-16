@@ -4,6 +4,11 @@ import styles from "./page.module.css";
 import useSWR from "swr";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Blogify Dashboard Page",
+  description: "This is dashboard Page",
+};
+
 const Dashboard = () => {
 
   

@@ -42,7 +42,7 @@ const links=[
 const Navbar = () => {
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.logo}>LostElf</Link>
+      <Link href="/" className={styles.logo}>Blogify</Link>
 
     <div className={styles.links}>
         <DarkModeToggle/>   

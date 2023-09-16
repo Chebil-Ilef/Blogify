@@ -15,6 +15,16 @@ const getData = (cat) => {
   return notFound();
 };
 
+export async function generateMetadata({ params }) {
+
+  const cat = params.category;
+  console.log(cat)
+  return {
+    title: cat + " category",
+    description: "category page",
+  };
+}
+
 const Category = ({ params }) => {
   const data = getData(params.category);
   return (

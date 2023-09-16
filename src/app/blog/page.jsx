@@ -15,6 +15,11 @@ async function getData() {
   return res.json();
 }
 
+export const metadata = {
+  title: 'Blogify Blog Page',
+  description: 'This is Blog Page',
+}
+
 const Blog = async () => {
   const data = await getData();
   return (
